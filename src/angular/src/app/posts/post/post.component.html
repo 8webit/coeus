@@ -1,0 +1,30 @@
+<div  *ngIf="post && settings" id="post-component" class="pure-g">
+    <ng-container [ngSwitch]="settings.post?.layout">
+        <app-post-alfa *ngSwitchCase="'alfa'" 
+        [post]="post" 
+        [settings]="settings" 
+        [class.container]="settings?.post.container == 'fixed'"></app-post-alfa>
+        
+        <app-post-beta *ngSwitchCase="'beta'" 
+        [post]="post" 
+        [settings]="settings" 
+        [class.container]="settings?.post.container == 'fixed'"></app-post-beta>
+        
+        <app-post-delta *ngSwitchCase="'delta'" 
+        [post]="post" 
+        [settings]="settings" 
+        [class.container]="settings?.post.container == 'fixed'"></app-post-delta>
+        
+        <app-post-epsilon *ngSwitchCase="'epsilon'" 
+        [post]="post" 
+        [settings]="settings" 
+        [class.container]="settings?.post.container == 'fixed'"></app-post-epsilon>
+        
+        <app-post-gamma *ngSwitchCase="'gamma'" 
+        [post]="post" 
+        [settings]="settings" 
+        [class.container]="settings?.post.container == 'fixed'"></app-post-gamma>
+        
+        <p *ngSwitchDefault class="pure-u-1">No Post Layout Selected</p>
+    </ng-container>
+</div>

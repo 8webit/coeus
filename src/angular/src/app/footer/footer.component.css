@@ -1,0 +1,19 @@
+footer{
+    margin-top: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    display: block;
+    clear: both;
+}
+.social-link{
+    margin-top: 16px;
+    text-decoration: none;
+}
+.social-link img{
+    height: 32px;
+}
+
+.copyright{
+    margin-top: 0;
+}

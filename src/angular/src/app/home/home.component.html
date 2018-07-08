@@ -1,0 +1,6 @@
+<ng-container *ngIf="settings">
+    <ng-container [ngSwitch]="settings.layout">
+        <app-home-alfa *ngSwitchCase="'alfa'"></app-home-alfa>
+        <app-home-beta *ngSwitchCase="'beta'"></app-home-beta>
+    </ng-container>
+</ng-container>

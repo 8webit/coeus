@@ -1,0 +1,22 @@
+<div *ngIf="author" class="author">
+    <img class="avatar" [src] ="author.avatar_urls['96']" alt="avatar">
+    <p class="name"> {{ author.name }} </p>
+    <p class="description"> {{ author.description }} </p>
+</div>
+
+<div *ngIf="posts?.length > 0" class="author-posts">
+    <p class="recent">Recent Posts</p>
+    <div *ngFor="let post of posts" class="post-item">
+        <a href="{{post.link}}" class="title">{{ post.title.rendered }}</a>
+
+        <div class="meta">
+            <p class="date">{{ post.date | date:"fullDate" }}</p>
+            <p *ngIf="post.date != post.modified" class="date-modified">Updated on: {{ post.modified | date:"fullDate"}}</p>
+        </div>
+
+        <img *ngIf="post._embedded['wp:featuredmedia']"
+             src="{{ post._embedded['wp:featuredmedia'][0].source_url }}"
+             class="feature-media">
+        <div [innerHTML]="post.excerpt.rendered | sanitizeHtml"  class="post-content"></div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<ng-container *ngIf="page_count && current_page">
+    <a *ngIf="settings?.buttons && current_page > 1" (click)="gotoPrevious()"  class="pagination-previous">Previous</a>
+
+    <ng-container *ngIf="settings?.numbers && pagination.length > 1">
+        <ng-container *ngFor="let page_number of pagination; index as i">
+           <div *ngIf="page_number" (click)="gotoPage(+page_number)"
+                [class.active]="page_number == current_page"
+                class="pagination">
+                <p>{{ page_number }} </p>
+            </div>
+        </ng-container>
+    </ng-container>
+
+    <a *ngIf="settings?.buttons &&  page_count > 0 && page_count != current_page"  (click)="gotoNext()" class="pagination-next">Next</a>
+</ng-container>

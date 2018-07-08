@@ -1,0 +1,20 @@
+{
+    "name": "8webit/coeus",
+    "description": "Coeus",
+    "type": "project",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Tornike Gabisonia",
+            "email": "tornike.gabisonia@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "_8webit\\": "src/_8webit/"
+         }
+    },
+    "require": {
+        "8webit/wp_stem": "^1.0.0"
+    }
+}

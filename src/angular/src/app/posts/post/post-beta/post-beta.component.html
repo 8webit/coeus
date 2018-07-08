@@ -1,0 +1,43 @@
+<div class="feature-media-content">
+  <img  *ngIf="post?._embedded['wp:featuredmedia']"
+      src="{{ post?._embedded['wp:featuredmedia'][0].source_url }}"
+      class="feature-media">
+</div>
+<div class="pure-g">
+  <app-sidebars *ngIf="settings?.post.sidebars.left.length"
+  [sidebars]="settings?.post.sidebars.left"
+  class="pure-u-5-24"></app-sidebars>
+  
+  <div [class.no-left-sidebar]="!settings?.post.sidebars.left.length"
+  [class.no-right-sidebar]="!settings?.post.sidebars.right.length"
+  [ngClass]="column"
+  class="post-area pure-u-19-24">
+    <h1 class="post-title">{{ post.title.rendered }}</h1>
+
+    <div class="post-meta">
+      by <a *ngIf="settings.post.author" class="author" [href]="post._embedded.author[0].link"> {{ post._embedded.author[0].name }}</a>        
+      <p *ngIf="settings.post.display_date" class="date">On {{ post.date | date:"fullDate" }}</p>
+      <p *ngIf="post.date != post.modified && settings.post.display_date_modified" class="date-modified">
+         Updated On: {{ post.modified | date:"fullDate" }}
+      </p>
+    </div>
+
+    <div [innerHTML] = "post.content.rendered | sanitizeHtml" class="post-content"> </div>
+    
+    <div *ngIf="settings.post.fb_buttons" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" 
+    data-layout="button_count" data-action="recommend" 
+    data-size="large" data-show-faces="true" data-share="true">
+    </div>
+
+    <div *ngIf="settings.post.category" class="categories">
+      <ng-container *ngFor="let category of post._embedded['wp:term'][0]">
+        <a class="category" href="{{ category.link }}">{{ category.name }}</a>
+      </ng-container>
+    </div>
+  </div>
+
+  <app-sidebars *ngIf="settings?.post.sidebars.right.length"
+  [sidebars]="settings?.post.sidebars.right"
+  class="pure-u-5-24"></app-sidebars>
+</div>
+

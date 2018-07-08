@@ -1,0 +1,31 @@
+
+.brand {
+  display: inline-block;
+}
+.brand-logo{
+  vertical-align: middle;
+  height: 40px;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1024px){
+  .brand-logo{
+    height: 25px;
+  }
+  .brand{
+    height: 45px;
+    display: flex;
+    align-items: center;
+  }
+  .brand a{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .brand-title{
+    margin: 0;
+    padding: 10px;
+    font-size: 1.5em;
+  }
+}

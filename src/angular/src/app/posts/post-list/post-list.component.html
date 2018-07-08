@@ -1,0 +1,12 @@
+<div class="post-list" *ngIf="posts && settings">
+    <div class="pure-g">
+        <ng-container *ngFor="let post of posts" >
+            <app-post-list-item [post]="post" [settings]="settings.post_list" [ngClass]="column"></app-post-list-item>
+        </ng-container>
+    </div>
+</div>
+<app-paging *ngIf="paginationSettings && page_count && params" 
+[settings]="paginationSettings"
+[page_count]="page_count"
+[slug]="params.slug">
+</app-paging>

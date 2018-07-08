@@ -1,0 +1,58 @@
+<ng-container *ngIf="stickies && stickies.length > 0">
+    <div class="pure-g">
+    <ng-container *ngFor="let sticky of stickies;first as isFirst" >
+        <div [ngClass]="isFirst ? firstStickyPostGrid : stickyPostGrid"  class="sticky-post">
+            <ng-container *ngIf="sticky._embedded['wp:featuredmedia']">
+                <img [src]="getThumbnail(sticky)">
+            </ng-container>
+            <div class="header">
+                <div *ngIf="sticky._embedded['wp:term']" class="categories">
+                    <a *ngFor="let category of sticky['_embedded']['wp:term'][0]" [href]="category.link" class="category"> {{ category.name }} </a>
+                </div>
+                <div class="content-container">
+                    <a [href]="sticky.link" class="title"> {{ sticky.title.rendered }} </a>
+                    <div [innerHTML]="sticky.excerpt.rendered | sanitizeHtml" class="content"></div>
+                </div>
+            </div>
+            </div>
+    </ng-container>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="posts && posts.length > 0">
+   <div *ngFor="let post of posts" class="post">
+    <div *ngIf="post._embedded['wp:term']" class="categories">
+        <a *ngFor="let category of post['_embedded']['wp:term'][0]" [href]="category.link" class="category"> {{ category.name }} </a>
+    </div>
+    <ng-container *ngIf="post._embedded['wp:featuredmedia']">
+        <img [src]="getThumbnail(post)" class="thumbnail">
+    </ng-container>
+    <div class="content-container">
+        <a [href]="post.link" class="title"> {{ post.title.rendered }} </a>
+        <p class="date">{{post.date | date:"fullDate"}}</p>
+        <div [innerHTML]="post.excerpt.rendered | sanitizeHtml" class="content"></div>
+    </div>
+   </div>
+</ng-container>
+
+<ng-container *ngIf="prevPosts && prevPosts.length > 0" >
+    <ng-container *ngFor="let prevPost of prevPosts">
+        <div *ngFor="let post of prevPost" class="post">
+            <div *ngIf="post._embedded['wp:term']" class="categories">
+                <a *ngFor="let category of post['_embedded']['wp:term'][0]" [href]="category.link" class="category"> {{ category.name }} </a>
+            </div>
+            <ng-container *ngIf="post._embedded['wp:featuredmedia']">
+                <img [src]="getThumbnail(post)" class="thumbnail">
+            </ng-container>
+            <div class="content-container">
+                <a [href]="post.link" class="title"> {{ post.title.rendered }} </a>
+                <p class="date">{{post.date | date:"fullDate"}}</p>
+                <div [innerHTML]="post.excerpt.rendered | sanitizeHtml" class="content"></div>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>
+
+<div *ngIf="page > 0" class="load-more-container">
+    <button class="load-more" (click)="loadMore()">Load More</button>
+</div>

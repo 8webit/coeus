@@ -1,0 +1,135 @@
+header{
+    position: relative;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.coeus-main-header.menu-active{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+nav{
+    display: inline-block;
+}
+.header-search-enabled .pure-menu-horizontal{
+    width: 90%;
+}
+
+.pure-menu-horizontal{
+    width: 100%;
+    height: 100%;
+}
+
+.hamburger{
+    position: absolute;
+    top: 50%;
+    display: none;
+    z-index: 5;
+    right: 10px;
+    transform: translateY(-50%);
+}
+.hamburger:hover{
+    cursor: pointer;
+}
+.hamburger.menu-active{
+    top: 20px;
+}
+.hamburger-box{
+    width: 30px;
+    height: 20px;
+}
+.hamburger-inner,
+.hamburger-inner:after,
+.hamburger-inner:before{
+    width: 30px;
+    height: 3px;
+    border-radius: 4px;
+}
+.hamburger-inner:after,
+.hamburger-inner:before{
+    content: '';
+    display: block;
+}
+.hamburger-inner:after{
+    top: 13px;
+    position: relative;
+}
+.hamburger-inner:before{
+    top: 8px;
+    position: relative;
+}
+.search-box-container{
+    width: 10%;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+.search-label{
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+app-search-box >>> .search-label{
+    display: none;
+}
+
+@media screen and (min-width:1024px){
+    .search-label:hover{
+        cursor: pointer;
+    }
+    app-search-box{
+        position: absolute;
+        max-width: 300px;
+        right: 0;
+    }
+    app-search-box >>> input.search-field{
+        padding: 10px 20px;
+        height: 40px;
+        font-size: 1.2em;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .coeus-main-header{
+        height: 45px;
+    }
+    .coeus-main-header primary-menu{
+        display: none;
+    }
+    .coeus-main-header.menu-active primary-menu{
+        display: block;
+    }
+    .coeus-main-header.menu-active{
+        width: 100%;
+        position: fixed;
+        overflow: scroll;
+        z-index: 1;
+    }
+    header > .container,
+    header > .container-fluid{
+        height: 100%;
+    }
+    .hamburger{
+        display: block;
+    }
+    primary-menu{
+        display: block;
+    }
+    .menu-active .pure-menu{
+        width: 100%;
+    }
+    .search-box-container{
+        width: auto;
+    }
+    .search-label{
+        right: 60px;
+    }
+    .menu-active .search-box-container{
+        display: none;
+    }
+}

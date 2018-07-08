@@ -1,0 +1,120 @@
+:host{
+    width: 100%;
+    display: block;
+    position: relative;
+}
+.feature-media {
+    display:block;
+    margin: 0 auto;
+    clear: both;
+}
+.post-area{
+    margin: 0 auto;
+    padding: 1.4%;
+    position: relative;
+    box-sizing: border-box;
+}
+.date{
+    display: inline-block;
+}
+.categories{
+    margin-top: 15px;
+    float: right;
+    font-size: 0.8em;
+}
+.category{
+    margin-bottom: 16px;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+.author-container{
+    text-align: center;
+}
+.author{
+    text-align: center;
+    background-color: #f3f3f3;
+    display: inline-block;
+    padding: 10px;
+    color: #3b3b3b;  
+    font-size: 0.8em;      
+}
+.author-link{
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #3b3b3b !important;        
+}
+.author-link .avatar{
+    width: 48px;
+    display: block;
+    margin: 0 auto;
+}
+.author-link .prep{
+    display: inline-block;
+}
+.author-link .name{
+    margin-top: 5px;
+    display: inline-block;
+}
+.description-container{
+    max-width: 300px;
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 10px;
+    text-align: left;
+}
+.description-container h4{
+    margin-bottom: 5px;
+    margin-top: 0;    
+}
+.description-container .description{
+    margin-top: 5px;
+}
+.no-left-sidebar.no-right-sidebar{
+    margin: 0 auto;
+    display: block;
+}
+
+@media screen and (min-width: 1170px) and (max-width: 1366px){
+    .pure-u-3-24{
+        width: 16.6667%;
+    }
+    .pure-u-21-24{
+        width: 83.3333%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    app-sidebars{
+      display: none;
+    }
+    .post-area{
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 1050px){
+    .category{
+        margin-bottom: 5px;
+    }
+    .date{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .categories{
+        float: none;
+        margin-bottom: 16px;
+    }
+}
+@media screen and (max-width: 768px){
+    .date,
+    .category{
+        font-size: 0.9em;
+    }
+    .post-area{
+        width: 100%;
+    }
+}

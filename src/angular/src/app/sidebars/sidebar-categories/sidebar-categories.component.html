@@ -1,0 +1,6 @@
+<div *ngIf="categories" class="categories-sidebar-list">
+  <a *ngFor="let cat of categories" 
+  [routerLink]="['/',cat.slug]" 
+  routerLinkActive="active"
+  class="categories-sidebar-list-item"> {{ cat.name }} </a>
+</div>

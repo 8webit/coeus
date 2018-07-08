@@ -1,0 +1,16 @@
+<div id="posts-component" 
+[class.container]="settings?.container === 'fixed'"
+[class.no-sidebars]="settings?.sidebars.left.length == 0 && settings?.sidebars.right.length == 0"
+class="pure-g">
+    <app-sidebars *ngIf="settings?.sidebars.left.length != 0"
+    [sidebars]="settings?.sidebars.left"
+    [class.pure-u-4-24]="settings?.container === 'fluid'"
+    [class.pure-u-6-24]="settings?.container === 'fixed'"></app-sidebars>
+   
+    <app-post-list [isHomePage]="isHomePage" [ngClass]="postListColumn"></app-post-list>
+   
+    <app-sidebars *ngIf="settings?.sidebars.right.length != 0"
+    [sidebars]="settings?.sidebars.right"
+    [class.pure-u-4-24]="settings?.container === 'fluid'"
+    [class.pure-u-6-24]="settings?.container === 'fixed'"></app-sidebars>
+</div>

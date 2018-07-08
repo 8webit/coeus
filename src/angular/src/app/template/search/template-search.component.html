@@ -1,0 +1,28 @@
+<div class="search-field-container">
+    <input #searchField id="search"
+           class="search-field"
+           (keyup)="setTerm(searchField.value)"
+           (keyup.enter)="gotoSearch()"
+           type="text" name="search_page"
+           placeholder="Search"
+           [value]="term"
+           autocomplete="off">
+    <a (click)="gotoSearch()" for="search" class="search-label"><i class="material-icons">search</i></a>
+</div>
+<ng-container *ngIf="searchResults && searchResults.length > 0">
+    <div class="results">
+        <p class="result-counter">{{ headers.get('X-WP-Total') }} results </p>
+        <ng-container *ngFor="let result of searchResults;">
+                <div (click)="gotoResult(result)" class="result">
+                    <h1 class="title">{{result.title.rendered}}</h1> 
+                    <div [innerHTML] = "result.excerpt.rendered| sanitizeHtml" class="content"> </div>
+                </div>
+        </ng-container>
+    </div>
+    <p *ngIf="searchResults.length === 0" class="zero-results">0 Results</p>
+    <app-paging *ngIf="term.length > 2 && searchResults.length > 0 && settings && headers"
+    [settings]="settings.pagination"
+    [page_count]="headers.get('X-WP-TotalPages')"
+    [slug]="slug">
+    </app-paging>
+</ng-container>

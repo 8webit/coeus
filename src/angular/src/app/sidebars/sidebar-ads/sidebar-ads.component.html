@@ -1,0 +1,6 @@
+<div *ngIf="settings?.adsense" id='afscontainer1'></div>
+<ng-container *ngIf="!settings?.adsense">
+  <a *ngIf="settings?.url" [href]="settings?.url">
+      <img class="ad" [src]="settings?.media" alt="Advertisment">
+  </a>  
+</ng-container>

@@ -1,0 +1,16 @@
+<footer *ngIf="settings?.footer.display"
+[ngClass]="settings.footer.layout === 'fluid' ? 'container-fluid' : 'container'">
+  <p *ngIf="settings?.footer.copyright_text" class="copyright"> {{ settings?.footer.copyright_text }} </p>
+  <p *ngIf="!settings?.footer.copyright_text" class="copyright"> Copyright &#9400; 2017 </p>
+  <div *ngIf="settings?.footer.social_link_display" class="social"> 
+    <a *ngIf="settings?.social.fb" [href]="settings?.social.fb" target="_blank" class="social-link">
+      <img [src]="settings?.uri + '/assets/images/fb-icon.png'" alt="facebook">
+    </a>
+    <a *ngIf="settings?.social.twitter" [href]="settings?.social.twitter" target="_blank" class="social-link">
+      <img [src]="settings?.uri + '/assets/images/twitter-icon.svg'" alt="twitter">
+    </a>
+    <a *ngIf="settings?.social.gplus" [href]="settings?.social.gplus" target="_blank" class="social-link">
+      <img [src]="settings?.uri + '/assets/images/gplus-icon.png'" alt="gplus">
+    </a>
+  </div>
+</footer>

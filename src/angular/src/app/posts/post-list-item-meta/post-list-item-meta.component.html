@@ -1,0 +1,10 @@
+<ng-container *ngIf="post">
+  <div class="post-meta-author">
+      <p>by</p>
+          <ng-container *ngFor="let author of post._embedded.author">
+            <a [routerLink]="['/','author',author.slug]" class="name"> {{ author.name}}</a>
+            <p *ngIf="post._embedded.author.length > 1">,</p>
+          </ng-container>
+  </div>
+  <p class="post-meta-date">{{ post.date | date:"fullDate" }}</p>
+</ng-container>

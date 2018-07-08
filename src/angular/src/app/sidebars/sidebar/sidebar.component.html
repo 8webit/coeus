@@ -1,0 +1,7 @@
+<ng-container [ngSwitch]="sidebar">
+    <app-sidebar-categories *ngSwitchCase="'categories'" class="sidebar sidebar-left"></app-sidebar-categories>
+    <app-sidebar-recent-posts *ngSwitchCase="'recent_posts'" class="sidebar sidebar-left"></app-sidebar-recent-posts>
+    <app-sidebar-author *ngSwitchCase="'about_author'"></app-sidebar-author>
+    <app-sidebar-ads *ngSwitchCase="'adsense_200_600'"></app-sidebar-ads>
+    <app-search-box *ngSwitchCase="'search'"></app-search-box>
+</ng-container>

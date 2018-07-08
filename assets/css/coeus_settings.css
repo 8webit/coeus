@@ -1,0 +1,298 @@
+/*
+ * Customizer Menu
+ */
+.coeus-menu-image{
+    margin-right: 10px;
+    vertical-align: middle;
+    height: 30px;
+}
+.coeus-settings-menu {
+    display: block;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 2px #D0D0D0;
+}
+
+.coeus-settings-menu-item {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #000;    
+}
+
+.coeus-settings-menu-item:last-child {
+    border-bottom: none;
+}
+
+.coeus-settings-menu-item:hover {
+    background-color: #EFEFEF;
+}
+
+.coeus-settings-menu-item:focus {
+    color: initial;
+    box-shadow: none;
+}
+
+.coeus-settings-menu-item.active {
+    color: #0085ba;
+}
+
+.coeus-dropdown-title {
+    margin: 0;
+}
+
+.coeus-dropdown-title:hover {
+    color: #0085ba;
+    cursor: pointer;
+}
+
+.coeus-dropdown-title .dashicons {
+    float: right;
+}
+
+.coeus-dropdown-childrens {
+    display: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/*
+   * Settings Content 
+   */
+
+.coeus-settings-content {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.coeus-settings-content>div:first-child {
+    display: block;
+}
+
+.coeus-settings-content h1 {
+    margin-bottom: 15px;
+}
+
+.coeus-settings-content .coeus-field-group {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.coeus-settings-content .label-wrapper label {
+    font-weight: 500;
+}
+
+
+@media (min-width:1150px) {
+    .coeus-settings-content {
+        width: 70%;
+    }
+}
+
+@media (min-width:962px) and (max-width:1150px) {
+    .coeus-settings-content {
+        width: 60%;
+    }
+}
+
+@media (min-width:962px) {
+    .coeus-settings-menu {
+        float: left;
+        width: 240px;
+    }
+    .coeus-settings-content {
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width:962px) {
+    .coeus-settings-menu {
+        display: block; 
+        width: auto;
+        margin-right: 10px;
+    }
+    .coeus-settings-content {
+        display: block;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+}
+
+
+/* Layout Selector */
+
+.layout-selector .field-wrapper {
+    width: 100%;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+
+.layout-selector input {
+    display: none;
+}
+
+.layout-selector .label-wrapper label {
+    font-size: 1.1em;
+}
+
+.layout-selector .label-wrapper {
+    margin-bottom: 10px;
+}
+
+.layout-selector .field-wrapper label {
+    display: inline;
+    vertical-align: top;
+    text-align: center;
+}
+
+.layout-selector .field-wrapper img {
+    width: 200px;
+    vertical-align: top;
+    border: 1px solid #CFCFCF;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.layout-selector.large .field-wrapper img {
+    width: 300px;
+}
+
+.layout-selector .field-wrapper label img.active {
+    border: 4px solid #0085ba;
+}
+
+
+/* coeus_sidebar Customizer */
+
+.coeus_sidebar .ui-sortable-helper {
+    box-shadow: 0 3px 10px 1px rgb(0, 0, 0);
+}
+
+.coeus_sidebar .available-items {
+    display: block;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    min-height: 35px;
+    border: 1px solid #e0e0e0;
+}
+
+.coeus_sidebar .available-item {
+    width: 200px;
+    padding: 6px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: #F5F5F5;
+    border: 1px solid #CECECE;
+}
+
+.coeus_sidebar .available-item .button-sortable {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 10px;
+    color: #0580fc;
+}
+
+.coeus_sidebar .available-item:hover {
+    cursor: move;
+    border: 1px solid #696969;
+}
+
+.coeus_sidebar .available-item .title {
+    margin: 0;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.coeus_sidebar-box {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.coeus_sidebar-box-content {
+    width: 200px;
+    min-height: 240px;
+    float: left;
+    background-color: #ebf3fb;
+    border: 1px solid #b0b0b0;
+}
+
+.box-placeholder {
+    width: 200px;
+    height: 35px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    vertical-align: top;
+    display: inline-block;
+    background-color: #B7DBFF;
+}
+
+.coeus-datapicker .ui-datepicker {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.coeus-datapicker .ui-datepicker-header {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: center;
+}
+
+.coeus-datapicker .ui-datepicker-calendar td a {
+    padding: 2px 5px 2px 10px;
+}
+
+.coeus-datapicker .ui-datepicker-calendar td .ui-state-default {
+    text-decoration: none;
+}
+
+.coeus-datapicker .ui-state-highlight {
+    background-color: #c0ebfc;
+}
+
+.coeus-datapicker .ui-datepicker-calendar td .ui-state-hover,
+.coeus-datapicker .ui-datepicker-calendar td .ui-state-active {
+    background-color: #0099CB;
+    color: white;
+}
+
+.coeus-datapicker .ui-datepicker-prev {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+.coeus-datapicker .ui-datepicker-next {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+.coeus-datapicker .ui-datepicker-prev:hover,
+.coeus-datapicker .ui-datepicker-next:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .coeus-field-group {
+        margin-bottom: 20px;
+    }
+
+    .coeus-datapicker .ui-datepicker-prev {
+        position: static;
+        text-align: left;
+        display: block;
+    }
+}

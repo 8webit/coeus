@@ -1,0 +1,92 @@
+.material-icons{
+    vertical-align: middle;
+}
+.sticky{
+    margin-bottom: 30px;
+}
+.sticky .card{
+    padding: 10px;
+    border: 10px solid transparent;
+    border-top-color: #ddd;
+    border-bottom-color: #ddd;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.sticky .thumbnail img{
+    width: 100%;
+}
+.sticky .title{
+    color: #000;
+    font-size: 2em;
+    text-decoration: none;
+}
+.sticky .category{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+.sticky .excerpt{
+    color: #000;
+    font-size: 1em;
+}
+.category-section{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.category-section .name-container{
+    padding: 0 10px 20px 10px;
+    font-size: 1.3em;
+}
+.category-section .name{
+    margin: 0;
+    display: inline-block;
+}
+.category-section .see-all{
+    float: right;
+    text-decoration: none;
+    font-weight: bold;    
+}
+
+.category-section .post{
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+.category-section .post .title {
+    text-decoration: none;
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.category-section .post .meta{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.category-section .post .meta .author{
+    float: left;
+    font-size: 0.8em;
+    text-decoration: none;    
+}
+.category-section .post .meta .date{
+    float: right;
+    margin: 0;
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 1024px){
+    .category-section .post{
+        margin-bottom: 30px;
+    }
+    .category-section .post .thumbnail{
+        width: 100%;
+    }
+}

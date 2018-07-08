@@ -1,0 +1,6 @@
+<ng-container *ngIf="template" [ngSwitch]="template">
+    <app-home *ngSwitchCase="'template-home.php'" [page]="page">Home,Sweet Home</app-home>
+    <posts *ngSwitchCase="'template-post-list.php'" [isHomePage]="isHomePage"></posts>
+    <template-search *ngSwitchCase="'template-search.php'">Search page</template-search>
+    <app-template-plain *ngSwitchDefault [page]="page"></app-template-plain>
+</ng-container>

@@ -1,0 +1,10 @@
+:host{
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+}
+.ad{
+    width: 200px;
+    min-height: 600px;
+    height: 600px;
+}

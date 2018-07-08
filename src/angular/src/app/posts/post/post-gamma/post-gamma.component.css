@@ -1,0 +1,123 @@
+:host{
+    position: relative;
+    display: block;
+    margin: 10px auto;
+}
+.post-area{
+    padding: 20px 1.5%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.feature-media{
+    margin: 0 auto;
+    display: block;
+    max-height: 400px;    
+}
+.post-title{
+    margin-bottom: 0;
+}
+.author-container .prep{
+    display: inline-block;
+}
+.author{
+    text-decoration: none;
+}
+.author:hover{
+    text-decoration: underline;
+}
+.date:after{
+    content: "|";
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.date{
+    margin-left: 20px;
+}
+
+.author-container,
+.date,
+.date-modified{
+    font-size: 0.8em;
+    display: inline-block;
+}
+
+.categories{
+    margin-left: 100px;
+    float: right;
+}
+
+.category{
+    margin-top: 10px;
+    margin-right: 10px;
+    display: inline-block;    
+    text-decoration: none;
+    padding: 10px;
+}
+
+.category:hover{
+    text-decoration: underline;
+}
+.post-content{
+    clear: both;
+}
+.fb-like{
+    clear: both;
+    display: block;
+}
+
+@media screen and (min-width: 1170px) and (max-width: 1366px){
+    .pure-u-3-24{
+        width: 16.6667%;
+    }
+    .pure-u-21-24{
+        width: 83.3333%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    app-sidebars{
+      display: none;
+    }
+    .post-area{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px){
+    :host{
+        margin: 0 auto;
+    }
+    .post-area{
+        padding: 0 1.5%;
+        width: 100%;
+    }
+    .date{
+        margin-left: 0;
+    }
+    .date-modified{
+        display: block;
+        margin: 0;
+    }
+    .categories{
+        display: block;
+        float: none;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+    .category{
+        margin-right: 16px;
+        margin-bottom: 10px;
+    }
+    .category:first-child{
+        margin-left: 0;
+    }
+    .date:after{
+        display: none;
+    }
+}
+
+.no-left-sidebar.no-right-sidebar{
+    margin: 0 auto;
+    display: block;
+}

@@ -1,0 +1,35 @@
+:host{
+  display: inline-block;
+  margin-left: 70px;
+}
+.pure-menu-list{
+  vertical-align: middle;
+}
+.wp_stem-menu-link{
+  padding: 14px 10px;
+}
+
+.material-icons{
+  vertical-align: middle;
+}
+@media screen and (max-width: 1024px){
+  :host{
+    margin-left: 10px;
+  }
+  .pure-menu-list{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .pure-menu-item{
+    display: block;
+  }
+  .pure-menu-item .wp_stem-menu-link{
+    margin-right: 10px;
+  }
+  .wp_stem-menu-child{
+    margin-right: 10px;
+  }
+  .material-icons{
+    display: none;
+  }
+}

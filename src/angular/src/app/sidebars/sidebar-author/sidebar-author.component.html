@@ -1,0 +1,6 @@
+<div class="sidebar-author">
+  <h1 *ngIf="settings?.title" class="title sidebar-author-title">{{ settings?.title }}</h1>
+  <a *ngIf="author?.avatar_urls" [href]="author?.link" class="avatar"><img [src]="author?.avatar_urls[96]" alt="avatar"></a>
+  <a *ngIf="author?.name" class="name sidebar-author-name" [href]="author?.link" class="name">{{author?.name}}</a>
+  <p *ngIf="author?.description" class="description sidebar-author-description">{{author?.description}}</p>
+</div>

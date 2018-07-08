@@ -1,0 +1,41 @@
+.http-error{
+    max-width:400px;
+    margin:50px auto;
+    background-color: white;
+    padding:20px;
+}
+.error-404{
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform: translate(-50%,-50%);
+}
+.title{
+    font-size:4em;
+    margin:0;
+    color:#F44336;
+}
+.message{
+    margin: 10px 0 30px 0;
+}
+.btn-link,
+.btn-link:active,
+.btn-link:hover{
+    color: #2196f3;
+}
+
+@media (max-width:768px){
+    .error-404{
+        position: static;
+        top:initial;
+        left:initial;
+        transform: initial;
+        text-align: center;
+    }
+    .title{
+        font-size: 2em;
+    }
+    .message{
+        font-size:1.2em;
+    }
+}

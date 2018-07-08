@@ -1,0 +1,4 @@
+<div *ngIf="brand" class="brand">
+  <a *ngIf="brand.logo" routerLink="/" > <img  src="{{ brand.logo }}" class="brand-logo" /></a>
+  <a *ngIf="brand.title" routerLink="/" class="pure-menu-heading brand-title"> {{ brand.title }} </a>
+</div>

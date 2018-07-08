@@ -1,0 +1,6 @@
+<ng-container *ngIf="page">
+  <div class="container">
+    <h1 *ngIf="page.title" class="title">{{ page.title.rendered }}</h1>
+    <div *ngIf="page.content" class="content" [innerHTML]="page.content.rendered | sanitizeHtml"></div>
+  </div> 
+</ng-container>

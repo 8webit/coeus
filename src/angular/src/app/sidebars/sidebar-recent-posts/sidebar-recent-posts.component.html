@@ -1,0 +1,16 @@
+<div *ngIf="posts"
+class="post-container sidebar-recent-posts">
+  <p class="sidebar-title sidebar-recent-posts-title">Latest</p>
+  <div *ngFor="let post of posts" [class.no-media]="!post._embedded['wp:featuredmedia']" class="post">
+      <a  *ngIf="post._embedded['wp:featuredmedia']" href="{{post.link}}" 
+      [style.backgroundImage]="'url('+getFeatureImageUrl(post._embedded['wp:featuredmedia'][0])+')'"
+      class="feature-media" >
+      </a>
+      <div class="content sidebar-recent-posts-content">
+        <div class="title sidebar-recent-posts-post-title">
+          <a href="{{post.link}}" class="title-link">{{ post.title.rendered }}</a>
+       </div>
+        <p class="date sidebar-recent-posts-post-date">{{ post.date | date:"fullDate" }}</p>
+      </div>
+    </div>
+  </div>

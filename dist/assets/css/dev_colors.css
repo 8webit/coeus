@@ -1,0 +1,70 @@
+.brand-logo {
+    height: 50px;
+}
+
+.brand-title {
+    color: #fff;
+}
+/* Header Layout */
+
+.coeus-main-header {
+background-color: #000;
+}
+.search-label{
+    color: #fff;
+}
+.hamburger-inner,
+.hamburger-inner::after,
+.hamburger-inner::before{
+    background-color: white;
+}
+/* Primary Menu */
+
+.wp_stem-menu-parent>a,
+.wp_stem-menu-child-item {
+    color: #fff;
+}
+
+.wp_stem-menu-parent>a:hover,
+.wp_stem-menu-child-item:hover,
+.wp_stem-menu-parent>a.active,
+.wp_stem-menu-child-item.active {
+    color: #000;
+    background-color: #fff;
+}
+
+.coeus-main-header .wp_stem-menu-child {
+    color: #fff;
+    background-color: #000;
+}
+
+/* Post List */
+.post-list-item-container{
+    background-color: #e0e0e0;
+}
+.read-more{
+    color: #fff;
+    background-color: #000;
+}
+/* Post */
+.post-area{
+    background-color: #f2f2f2;
+}
+
+/* Pagination */
+
+.pagination.active{
+    color: #fff;
+    background-color: #000;
+}
+
+/* Category Sidebar */
+.categories-sidebar-list{
+    background-color: #1b1818;
+}
+.categories-sidebar-list-item{
+    color: #fff;
+}
+.categories-sidebar-list-item.active{
+    background-color: orange;
+}

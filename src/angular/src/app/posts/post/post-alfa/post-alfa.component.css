@@ -1,0 +1,144 @@
+/* Alfa */
+:host{
+    position: relative;
+    display: block;
+}
+.post-area{
+    margin: 0 auto;
+    padding: 1.4%;
+    position: relative;
+    box-sizing: border-box;
+}
+.meta{
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.date,
+.date-modified{
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.7em;
+}
+.author-container{
+    text-align: center;
+    top: 160px;
+}
+.author{
+    text-decoration: none;
+}
+.author .avatar{
+    width: 48px;
+    border-radius: 50%;
+}
+.author .name{
+    display: block;
+}
+.categories{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.category{
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5px;    
+}
+
+.feature-media{
+    display: block;
+    margin: 0 auto;
+}
+
+.container .author{
+    font-size: 0.8em;
+}
+.container .categories{
+    font-size: 0.7em;
+}
+.no-media .post-area{
+    width: 100%;
+}
+.no-media .post-title{
+    text-align: center;
+}
+.no-media .author-container{
+    position: static;
+    margin: 10px auto 10px auto;
+    text-align: center;
+}
+.no-media .author{
+    position: static;
+    display: inline;
+    margin: 10px auto 10px auto;
+    font-size: 0.8em;
+}
+.no-media .date,
+.no-media .date-modified{
+    width: 100%;
+    margin-bottom: 10px;
+    position: static;
+    display: block;
+    font-size:  0.7em;
+}
+.no-media .categories{
+    width: 100%;
+    position: static;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8em;
+}
+.no-media .feature-media{
+    width: 100%;
+}
+
+.no-left-sidebar.no-right-sidebar{
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+    app-sidebars{
+      display: none;
+    }
+    .post-area{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px){
+    :host{
+        padding-top: 0;
+    }
+    .post-area{
+        width: 100%;
+    }
+    .feature-media-container{
+        width: 100%;
+    }
+    .author-container{
+        width: auto;
+        position: static;
+    }
+    .author{
+        display: block;
+        margin: 10px auto 10px auto;
+        font-size: 0.8em;
+    }
+    .date,
+    .date-modified{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: static;
+        display: block;
+    }
+    .categories{
+        width: 100%;
+        position: static;
+        margin-bottom: 10px;
+        font-size: 0.8em;
+    }
+}

@@ -1,0 +1,29 @@
+<div [class.hide-field]="hide_field">
+    <input *ngIf="!hide_field"
+    #SearchBox
+    (keyup)="keyupListener($event)"
+    (sumbit)="removeAutoComplete()"
+    type="text" 
+    name="global_search"
+    value=""
+    placeholder="Search"
+    autocomplete="off"
+    class="search-field">
+    <label (click)="toggleField()" class="search-label"><i class="material-icons">search</i></label>
+</div>
+<ng-container *ngIf="!hide_field && searchResult | async;let results">
+    <div #AutoComplete *ngIf="results.length > 0" class="search-result-container">
+        <ng-container *ngFor="let result of results;index as i">
+            <ng-container *ngIf="i < 4">
+                <div (click)="gotoResult(result)" 
+                [class.no-media]="!result._embedded['wp:featuredmedia']"
+                class="search-result">
+                    <img class="thumbnail" 
+                    *ngIf="result._embedded['wp:featuredmedia'] && result._embedded['wp:featuredmedia'][0].media_details.sizes" 
+                    [src]="result._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail?.source_url" alt="thumbnail">
+                    <p class="title">{{result.title.rendered}}</p>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</ng-container>

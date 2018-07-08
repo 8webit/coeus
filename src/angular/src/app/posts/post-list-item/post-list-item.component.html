@@ -1,0 +1,37 @@
+<div [class.alfa]="settings?.layout == 'alfa'"
+    [class.beta]="settings?.layout == 'beta'"
+    [class.gamma]="settings?.layout == 'gamma'"
+    [class.delta]="settings?.layout == 'delta'"
+    [class.col1] = "settings.column == 1"
+    [class.col2] = "settings.column == 2"
+    [class.col3] = "settings.column == 3"
+    [class.col4] = "settings.column == 4"
+    [class.equal-column] = "settings.column_type == 'equal'"
+    class="post-list-item-container">
+
+    <!-- Thumbnail  -->
+	<a *ngIf="settings?.thumbnail_display &&  settings?.layout === 'delta' && post._embedded['wp:featuredmedia']"  [href]="post.link">
+		<img 
+		src="{{ post._embedded['wp:featuredmedia'][0].source_url }}"
+		class="feature-media">
+	</a>
+  <a  class="post-title" [href]="post.link"> {{ post.title.rendered }}</a>
+
+  <!-- Post Meta  -->
+  <ng-container *ngIf="settings.meta_display">
+    <app-post-list-item-meta [post]="post"></app-post-list-item-meta>
+  </ng-container>
+
+  <!-- Thumbnail  -->
+  <a *ngIf="settings?.thumbnail_display && settings?.layout !== 'delta' && post._embedded['wp:featuredmedia']" [href]="post.link">
+    <img  [src]="getFeatureImageUrl(post._embedded['wp:featuredmedia'][0])"
+    class="feature-media">
+  </a>
+
+      <!-- Post Content  -->
+  <div *ngIf="settings?.content_display && settings?.layout != 'gamma'" [innerHTML]="post.excerpt.rendered | sanitizeHtml"
+      class="content"></div>
+
+      <!-- Read More -->
+  <a *ngIf="settings?.button_more" [href]="post.link" class="read-more"> Read More...</a>
+</div>

@@ -1,0 +1,43 @@
+:host{
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 20px auto 20px auto;
+}
+
+.pagination-previous{
+    margin-right: 20px;
+}
+
+.pagination-next{
+    margin-left: 20px;
+}
+
+.pagination-previous,
+.pagination-next{
+    font-weight: bold;
+}
+
+.pagination{    
+    padding: 5px 10px;
+    display: inline-block;        
+    margin-left: 5px;
+    text-align: center;
+}
+
+.pagination p{
+    display: inline;
+}
+
+.pagination:hover,
+.pagination-next:hover,
+.pagination-previous:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px){
+    .pagination{
+        display: none;
+    }
+}
+

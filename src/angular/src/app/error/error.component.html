@@ -1,0 +1,18 @@
+<div class="container">
+  <div *ngIf="status && messages[status]" class="http-error">
+    <div class="info">
+      <h3 *ngIf="messages[status].title" class="title">{{ messages[status].title }}</h3>
+      <p *ngIf="messages[status].message" class="message">{{ messages[status].message }}</p>
+      <a routerLink="/" class="btn-link">Go to Home page</a>
+    </div>
+  </div>
+
+  <div *ngIf="!status && !messages[status]" class="http-error">
+    {{ messages[status] }}
+    <div class="info">
+      <h3 *ngIf="messages[0].title" class="title"> {{ messages[0].title }}</h3>
+      <p *ngIf="messages[0].message" class="message">{{ messages[0].message }}</p>
+    </div>
+     <a routerLink="/" class="btn-link">Go to Home page</a>
+  </div>
+</div>

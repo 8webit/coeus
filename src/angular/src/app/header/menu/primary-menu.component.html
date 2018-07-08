@@ -1,0 +1,19 @@
+<div *ngIf="menuItems && menuItems.length > 0" class="pure-menu-list">
+  <div *ngFor="let menuItem of menuItems" class="pure-menu-item wp_stem-menu-parent">
+    <a *ngIf="menuItem.object != 'custom'" 
+    (click)="onItemClick(menuItem)"
+    [routerLink]="menuItem.slug" 
+    routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact:true}" 
+    class="wp_stem-menu-link">
+      {{ menuItem.title }}  <i *ngIf="menuItem.childrens" class="material-icons">arrow_drop_down</i>
+    </a>
+    <a *ngIf="menuItem.object == 'custom'" [href]="menuItem.url" class="wp_stem-menu-link"> {{ menuItem.title }} </a>
+
+    <div *ngIf="menuItem.childrens" class="wp_stem-menu-child">
+      <a *ngFor="let childMenuItem of menuItem.childrens" (click)="onItemClick()" [href]="childMenuItem.url" class="wp_stem-menu-child-item">
+          {{ childMenuItem.title }} 
+      </a>
+    </div>
+  </div>
+</div>

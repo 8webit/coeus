@@ -1,0 +1,50 @@
+<div [class.container]="settings?.post.container === 'fixed'">
+  <app-sidebars *ngIf="settings?.post.sidebars.left.length"
+  [sidebars]="settings?.post.sidebars.left"
+  [class.pure-u-4-24]="settings?.post.container === 'fluid'"
+  [class.pure-u-6-24]="settings?.post.container === 'fixed'"></app-sidebars>
+
+  <div *ngIf="post"
+  [class.no-media]="!post._embedded['wp:featuredmedia']"
+  [class.no-left-sidebar]="!settings?.post.sidebars.left.length"
+  [class.no-right-sidebar]="!settings?.post.sidebars.left.length"
+  [ngClass]="column"
+  class="post-area">
+    
+    <img  *ngIf="post._embedded['wp:featuredmedia']"
+    src="{{ post._embedded['wp:featuredmedia'][0].source_url }}"
+    class="feature-media">
+    
+    <h1 class="post-title">{{ post.title.rendered }}</h1>
+    
+    <div *ngIf="settings.post.author" class="author-container">
+      <p class="prep">by</p>
+      <a class="author" [href]="post._embedded.author[0].link">
+        <span class="name"> {{ post._embedded.author[0].name }}</span>
+      </a>
+    </div>
+
+    <p *ngIf="settings.post.display_date" class="date">On {{ post.date | date:"fullDate" }}</p>
+    <p *ngIf="settings.post.display_date_modified && post.date != post.modified" class="date-modified">
+      Updated on: {{ post.modified | date:"fullDate" }}
+    </p>
+
+    <div *ngIf="settings.post.category" class="categories">
+      <ng-container *ngFor="let category of post._embedded['wp:term'][0]">
+        <a href="{{ category.link }}" class="category">{{ category.name }}</a>
+      </ng-container>
+    </div>
+    
+    <div [innerHTML] = "post.content.rendered | sanitizeHtml" class="post-content"> </div>
+    
+    <div *ngIf="settings.post.fb_buttons" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" 
+    data-layout="button_count" data-action="recommend" 
+    data-size="large" data-show-faces="true" data-share="true">
+    </div>
+  </div>
+
+  <app-sidebars *ngIf="settings?.post.sidebars.right.length"
+  [sidebars]="settings?.post.sidebars.right"
+  [class.pure-u-4-24]="settings?.post.container === 'fluid'"
+  [class.pure-u-6-24]="settings?.post.container === 'fixed'"></app-sidebars>
+</div>

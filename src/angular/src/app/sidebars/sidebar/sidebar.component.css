@@ -1,0 +1,13 @@
+:host{
+    display: block;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+:host:first-child{
+    margin-top: 0;
+}
+.sidebar{
+    margin-bottom: 10px;
+}

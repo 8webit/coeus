@@ -1,0 +1,25 @@
+:host{
+    font-size: 0.6em;
+    color: #454545;
+    display: block;
+    margin-bottom: 10px;
+}
+
+i{
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.post-meta-author .name{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: underline;
+}
+
+.post-meta-author,
+.post-meta-author p,
+.post-meta-author a,
+.post-meta-date {
+    display: inline;
+}

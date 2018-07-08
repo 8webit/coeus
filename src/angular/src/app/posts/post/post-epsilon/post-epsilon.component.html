@@ -1,0 +1,50 @@
+<div [class.container]="settings?.post.container === 'fixed'">
+  <app-sidebars *ngIf="settings?.post.sidebars.left.length"
+  [sidebars]="settings?.post.sidebars.left"
+  [class.pure-u-4-24]="settings?.post.container === 'fluid'"
+  [class.pure-u-6-24]="settings?.post.container === 'fixed'"></app-sidebars>
+
+  <div *ngIf="post"
+      [class.no-media]="!post._embedded['wp:featuredmedia']"
+      [class.no-left-sidebar]="!settings?.post.sidebars.left.length"
+      [class.no-right-sidebar]="!settings?.post.sidebars.right.length"
+      [ngClass]="column"
+      class="post-area">
+    <h1 class="post-title">{{ post.title.rendered }}</h1>
+    <p *ngIf="settings.post.display_date"class="date">{{ post.date | date:"fullDate" }}</p>
+
+    <div *ngIf="settings.post.category" class="categories">
+      <ng-container *ngFor="let category of post._embedded['wp:term'][0]">
+        <a href="{{ category.link }}" class="category">{{ category.name }}</a>
+      </ng-container>
+    </div>
+
+    <img  *ngIf="post._embedded['wp:featuredmedia']"
+          src="{{ post._embedded['wp:featuredmedia'][0].source_url }}"
+          class="feature-media">
+    <div [innerHTML] = "post.content.rendered | sanitizeHtml" class="post-content"> </div>
+
+    <div *ngIf="settings.post.author && author" class="author-container">
+      <div class="author">
+        <a class="author-link" [href]="author.link">
+          <img class="avatar" [src]="author.avatar_urls[96]"  alt="avatar">
+          <span class="prep"> by </span>
+          <span class="name">{{ author.name }}</span>
+        </a>
+        <div *ngIf="author.description" class="description-container">
+          <h4> About Author </h4>
+          <p class="description"> {{ author.description }} </p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="settings.post.fb_buttons" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" 
+    data-layout="button_count" data-action="recommend" 
+    data-size="large" data-show-faces="true" data-share="true">
+    </div>
+  </div>
+
+  <app-sidebars *ngIf="settings?.post.sidebars.right.length"
+  [sidebars]="settings?.post.sidebars.right"
+  [class.pure-u-4-24]="settings?.post.container === 'fluid'"
+  [class.pure-u-6-24]="settings?.post.container === 'fixed'"></app-sidebars>
+</div>

@@ -1,0 +1,23 @@
+<header  *ngIf="settings"
+         [class.menu-active]="is_menu_active"
+         [ngClass]="settings.layout === 'fluid' || settings.layout ==='fluid_fixed' ? 'container-fluid' : 'container'"
+         [class.header-search-enabled] = "settings.search.display"
+         class="coeus-main-header">
+  <div [ngClass]="settings.layout==='fluid_fixed' ? 'container' : 'container-fluid'">
+      <div #hamburger (click)="togglePrimaryMenu()" 
+      [class.menu-active]="is_menu_active" 
+      class="hamburger">
+          <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+          </div>
+      </div>
+      <nav class="pure-menu pure-menu-horizontal">
+        <brand></brand>
+        <primary-menu (onMenuItemClick)="onMenuItemClick()"></primary-menu>
+      </nav>
+      <div *ngIf="settings.search.display" class="search-box-container">
+        <label (click)="toggleSearchField()" class="search-label"><i class="material-icons">search</i></label>
+    </div>
+</div>
+<app-search-box *ngIf="show_search_field"></app-search-box>
+</header>

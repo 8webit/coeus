@@ -1,0 +1,17 @@
+:host{
+  display: block;
+}
+.categories-sidebar-list {
+    min-height: 300px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    width: 100%;
+    display: inline-block;
+}
+  
+.categories-sidebar-list-item {
+  padding: 7px 10px 7px 10px;
+  margin: 0;
+  display: block;
+  text-decoration: none;
+}

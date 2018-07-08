@@ -1,0 +1,141 @@
+:host {
+    padding: 0 3px 6px;
+    box-sizing: border-box;
+    position: relative;
+}
+a {
+    text-decoration: none;
+}
+
+.equal-column{
+    height: 100%;
+}
+.post-list-item-container {
+    width: 100%;
+    position: relative;
+    display: inline-block;    
+    padding: 1.4% 1.4% 10px 1.4%;
+    box-sizing: border-box;
+}
+
+.post-title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+.feature-media{
+    width: 100%;
+}
+.read-more {
+    position: absolute;
+    font-size: 1em;
+    right: 1.4%;
+    bottom: 50px;
+    padding: 6px;
+    border-radius: 2px;
+}
+.col4 .read-more{
+    bottom: 10px;
+}
+.col4 .content{
+    margin-bottom: 60px;
+}
+
+/*
+ * Alfa / Delta
+ */
+.alfa .feature-media {
+    display: block;
+    margin: 0 auto;
+}
+
+.delta .feature-media{
+    width: 100%;
+}
+.delta.post-list-item-container,
+.alfa.post-list-item-container{
+    padding: 1.4% 1.4% 40px 1.4%;
+}
+.delta .read-more,
+.alfa .read-more{
+    font-size: 0.8em;
+    bottom: 20px;  
+}
+/*  
+ * Beta 
+ */
+.beta {
+    box-sizing: border-box;
+}
+
+.beta .feature-media {
+    vertical-align: top;
+    width: 50%;
+    margin-right: 1%;
+    float: left;
+    margin-top: 8px;
+}
+
+.beta .post-meta {
+    margin-top: 0;
+}
+
+
+.beta .read-more {
+    bottom: 20px;
+}
+.beta.col2 .content,
+.beta.col3 .content{
+    margin-bottom: 50px;
+}
+
+
+
+.beta.col4{
+    padding: 1.4% 1.4% 50px 1.4%;
+}
+
+@media screen and (max-width:900px){
+    .beta .read-more{
+        position: static;
+        float:right;
+    }
+}
+
+
+/*
+ * Gamma
+ */
+ .gamma{
+    padding: 1.4% 1.4% 10px 1.4%;
+ }
+.gamma .feature-media {
+    width: 100%;
+    display: block;
+    margin: 0 auto 40px auto;
+}
+
+.gamma.col4 .feature-media{
+    margin-bottom: 70px;
+}
+.gamma.col2 .feature-media,
+.gamma.col3 .feature-media{
+    margin-bottom: 50px;
+}
+
+.gamma .read-more{
+    bottom: 10px;
+}
+.gamma.col2 .post-meta,
+.gamma.col3 .post-meta,
+.gamma.col4 .post-meta{
+    bottom: 30px;
+    left: 10px;
+}
+
+@media screen and (max-width: 667px){
+    .gamma .feature-media{
+        width:100%;
+        max-height: initial;
+    }
+}
